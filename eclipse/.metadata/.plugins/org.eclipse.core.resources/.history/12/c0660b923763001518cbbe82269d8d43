@@ -1,0 +1,33 @@
+package solomon7589.sandbox;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import solomon7589.sandbox.init.TutorialItems;
+import solomon7589.sandbox.proxy.CommonProxy;
+
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+public class SandboxMod {
+	
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	public static CommonProxy proxy;
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent Event){
+		TutorialItems.init();
+		TutorialItems.register();
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent Event){
+		proxy.registerRenders();
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent Event){
+		
+	}
+}

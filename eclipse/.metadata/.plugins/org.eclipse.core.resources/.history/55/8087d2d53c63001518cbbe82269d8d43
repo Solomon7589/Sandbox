@@ -1,0 +1,36 @@
+package solomon7589.sandbox;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import solomon7589.sandbox.init.TutorialBlocks;
+import solomon7589.sandbox.init.TutorialItems;
+import solomon7589.sandbox.proxy.CommonProxy;
+
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+public class SandboxMod {
+	
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	public static CommonProxy proxy;
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent Event){
+		TutorialBlocks.init();
+		TutorialBlocks.register();
+		TutorialItems.init(); //item initialization in TutorialItems --- initializes the item during game load
+		TutorialItems.register(); //item register event in TutorialItems --- registers the item in the game inventory
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent Event){
+		proxy.registerRenders(); //calls the client and server side proxies to register the rendering files for your items if the registerRenders method exists in it
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent Event){
+		
+	}
+}

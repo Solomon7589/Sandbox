@@ -1,0 +1,10 @@
+package solomon7589.sandbox.proxy;
+
+import solomon7589.sandbox.init.TutorialItems;
+
+public class CommonProxy {
+	
+	public void registerRenders(){
+		
+	}
+}

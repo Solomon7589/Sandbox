@@ -1,0 +1,10 @@
+package solomon7589.sandbox.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class BlockExtension extends Block{
+	public BlockExtension(Material materialIn) {
+		super(materialIn);
+	}
+}

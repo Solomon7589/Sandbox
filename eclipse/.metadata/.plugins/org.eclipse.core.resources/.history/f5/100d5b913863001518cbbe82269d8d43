@@ -1,0 +1,16 @@
+package solomon7589.sandbox.init;
+
+import net.minecraft.block.Block;
+
+public class TutorialBlocks {
+	
+	public static Block test_block;
+	
+	public static void init() {
+		
+	}
+	
+	public static void register() {
+		
+	}
+}

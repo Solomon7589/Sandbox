@@ -1,0 +1,28 @@
+package solomon7589.sandbox;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import solomon7589.sandbox.init.TutorialItems;
+
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+public class SandboxMod {
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent Event){
+		TutorialItems.init();
+		TutorialItems.register();
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent Event){
+	
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent Event){
+		
+	}
+}

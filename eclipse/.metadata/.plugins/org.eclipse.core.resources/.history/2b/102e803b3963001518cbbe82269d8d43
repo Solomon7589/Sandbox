@@ -1,0 +1,17 @@
+package solomon7589.sandbox.init;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class TutorialBlocks {
+	
+	public static Block test_block;
+	
+	public static void init() {
+		test_block = new Block(Material.cloth).setUnlocalizedName("test_block");
+	}
+	
+	public static void register() {
+		
+	}
+}
